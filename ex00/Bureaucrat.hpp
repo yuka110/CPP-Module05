@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 10:55:50 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/05/24 12:08:14 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/08/05 17:52:45 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
 #define BOLD_TEXT "\033[1m"
 #define RESET "\033[0m"
@@ -37,13 +38,37 @@ public:
     Bureaucrat(std::string name, int grade);
     ~Bureaucrat();
     Bureaucrat(Bureaucrat &a);
+    Bureaucrat& operator=(const Bureaucrat& a);
+
     void check_assignGrade(int grade);
     void incrementGrade();
     void decrementGrade();
     std::string getName() const;
     int getGrade() const;
+
+    class GradeTooHighException : public std::exception{
+        private:
+            std::string _b_name;
+
+        public:
+            GradeTooHighException(std::string name) : _b_name(name) {};
+            virtual const char* what() const throw(){
+                std::cout << _b_name << "'s ";
+                return ("grade is too high. The grade needs to be between 1-150");
+            };
+    };
     
-    
+    class GradeTooLowException : public std::exception{
+        private:
+            std::string _b_name;
+
+        public:
+            GradeTooLowException(std::string name) : _b_name(name) {};
+            virtual const char* what() const throw(){
+                std::cout << _b_name << "'s ";
+                return ("grade is too low. The grade needs to be between 1-150");
+            };
+    };
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& a);

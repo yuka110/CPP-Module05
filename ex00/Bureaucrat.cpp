@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:02:51 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/05/24 12:11:28 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/08/05 17:52:41 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Bureaucrat::Bureaucrat(){
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 {
     std::cout << "Constructor is called" << std::endl;
     check_assignGrade(grade);
@@ -24,26 +24,27 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 Bureaucrat::~Bureaucrat(){
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &a) : _name(a.getName()), _grade(a.getGrade())
+Bureaucrat::Bureaucrat(Bureaucrat &a) : _name(a.getName())
 {
+    operator=(a);
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& a)
+{
+    if (this == &a)
+        return (*this);
+    _grade = a.getGrade();
+    return (*this);
 }
 
 void Bureaucrat::check_assignGrade(int grade)
 {
-    try{
-        if (grade < 1){
-            throw std::runtime_error("Grade is too high");
-        }
-        else if (grade > 150){
-            throw std::runtime_error("Grade is too low");
-        }
-        else
-            _grade = grade;   
-    }
-    catch (std::exception &e){
-        std::cout << e.what() << std::endl;
-        _grade = 150;
-    }
+    if (grade < 1)
+        throw GradeTooHighException(_name);
+    else if (grade > 150)
+        throw GradeTooLowException(_name);
+    else
+        _grade = grade;
 }
 
 void Bureaucrat::incrementGrade()
