@@ -22,5 +22,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::actualExec() const
 {
-
+    std::ofstream file;
+    std::string s = getName() + "_shrubbery";
+    file.open(s);
+    if (!file.is_open())
+        throw std::runtime_error("file couldn't be opened");
+    file << ASCII_TREE;    
 }

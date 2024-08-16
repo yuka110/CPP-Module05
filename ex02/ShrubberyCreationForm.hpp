@@ -1,8 +1,9 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM__HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
 #include <cstring>
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
@@ -21,6 +22,22 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& out, const ShrubberyCreationForm& a);
+// std::ostream& operator<<(std::ostream& out, const ShrubberyCreationForm& a);
+
+#define ASCII_TREE "\n\
+                                  /#### ####\"\
+                                ### \"/#|### |/####\
+                               ##\"/#/ \"||/##/_/##/_#\
+                             ###  \"/###|/ \"/ # ###\
+                           ##_\"_#\"_\"## | #/###_/_####\
+                          ## #### # \" #| /  #### ##/##\
+                           __#_--###`  |{,###---###-~\
+                                     \" }{\
+                                      }}{\
+                                      }}{\
+                                 ejm  {{}\
+                                , -=-~{ .-^- _\
+                                      `}\
+                                       {"
 
 #endif

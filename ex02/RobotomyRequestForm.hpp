@@ -1,5 +1,5 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM__HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 #include <cstring>
 #include <iostream>
@@ -21,6 +21,6 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& out, const RobotomyRequestForm& a);
+// std::ostream& operator<<(std::ostream& out, const RobotomyRequestForm& a);
 
 #endif

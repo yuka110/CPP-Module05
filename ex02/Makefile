@@ -6,16 +6,16 @@
 #    By: yitoh <yitoh@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/05/24 10:54:52 by yitoh         #+#    #+#                  #
-#    Updated: 2024/08/12 17:11:18 by yitoh         ########   odam.nl          #
+#    Updated: 2024/08/16 18:16:58 by yitoh         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=signForm
 CC		=c++
-CFLAGS	=-Wall -Werror -Wextra -std=c++11 -g #-fsanitize=leak
+CFLAGS	=-Wall -Werror -Wextra -std=c++11 -g -fsanitize=leak
 RM		=rm -f
 SRC		=Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp\
-		 RobotomyRequestForm.cpp PresidntialPardon.cpp main.cpp
+		 RobotomyRequestForm.cpp PresidentialPardonForm.cpp main.cpp
 OBJ		=$(SRC:%.cpp=obj/%.o)
 
 all:	$(NAME)

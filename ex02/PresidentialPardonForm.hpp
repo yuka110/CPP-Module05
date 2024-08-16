@@ -1,5 +1,5 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM__HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 #include <cstring>
 #include <iostream>
@@ -21,6 +21,6 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& out, const PresidentialPardonForm& a);
+// std::ostream& operator<<(std::ostream& out, const PresidentialPardonForm& a);
 
 #endif

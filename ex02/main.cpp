@@ -6,26 +6,15 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:01:46 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/08/16 12:04:18 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/08/16 18:12:13 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
-
-/*create a bureaucrat which has a grade
-
-create SForm,RForm, and PForm with std::string target as a constructor parameter
-
-AForm has  execute(Bureaucrat const &executor) const
-
-
-
-
-
-
-*/
-
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
@@ -35,27 +24,38 @@ int main()
         Bureaucrat John("John", 4);
 
         std::cout << Lara;
-        std::cout << Bob << std::endl;
-
-        std::cout << "=============================" << std::endl;
-        std::cout << "===INCREMENT===" << std::endl;
-        Lara.incrementGrade();
-        std::cout << Lara;
-        std::cout << "===DECREMENT===" << std::endl;
-        Bob.decrementGrade();
-        std::cout << Bob <<std::endl;
-        std::cout << "=============================" << std::endl;
-        Form form("A", 120, 100);
-        std::cout << form;
-        // form.beSigned(Lara);
         std::cout << Bob;
-        Bob.signForm(form);
+        std::cout << John << std::endl;
+        
+        PresidentialPardonForm Pform("Chocolate");
+        RobotomyRequestForm Rform("Strawberry");
+        ShrubberyCreationForm Sform("home");
+
+        std::cout << Pform;
+        std::cout << Rform;
+        std::cout << Sform;
+
+        std::cout << Bob;
+        Bob.signForm(Pform);
+        Pform.execute(Bob);
+        Bob.signForm(Rform);
+        Rform.execute(Bob);
+        Bob.signForm(Sform);
+        Sform.execute(Bob);
+
+        std::cout << "--------------------------------------------" << std::endl;
         std::cout << Lara;
-        Lara.signForm(form);
-        // form.beSigned(Bob);
-        // form.beSigned(John);
+        Lara.signForm(Rform);
+        Rform.execute(Lara);
+
+        std::cout << "--------------------------------------------" << std::endl;
         std::cout << John;
-        John.signForm(form);
+        John.signForm(Pform);
+        Pform.execute(John);
+        John.signForm(Rform);
+        Rform.execute(John);
+        John.signForm(Sform);
+        Sform.execute(John);        
         
     }
     catch (std::exception& e){
