@@ -6,12 +6,26 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:01:46 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/08/06 17:56:22 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/08/16 12:04:18 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
+/*create a bureaucrat which has a grade
+
+create SForm,RForm, and PForm with std::string target as a constructor parameter
+
+AForm has  execute(Bureaucrat const &executor) const
+
+
+
+
+
+
+*/
+
 
 int main()
 {

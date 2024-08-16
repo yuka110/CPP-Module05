@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 10:55:50 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/08/15 14:42:11 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/08/16 13:33:06 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -50,6 +50,7 @@ public:
     int getGrade() const;
     
     void signForm(AForm& form);
+    void executeForm(AForm const& form);
 
     class GradeTooHighException : public std::exception{
         private:

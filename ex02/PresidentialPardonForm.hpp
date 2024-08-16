@@ -9,21 +9,18 @@
 class Bureaucrat;
 class AForm;
 
-class PresidntialPardonForm : public AForm
+class PresidentialPardonForm : public AForm
 {
-private:
-    
 public:
-    PresidntialPardonForm();
-    PresidntialPardonForm(std::string name, int signGrade, int execGrade);
-    ~PresidntialPardonForm();
-    PresidntialPardonForm(PresidntialPardonForm& a);
-    PresidntialPardonForm& operator=(const PresidntialPardonForm& a);
-    
-    void beSigned(Bureaucrat b);
+    PresidentialPardonForm();
+    PresidentialPardonForm(std::string target);
+    ~PresidentialPardonForm();
+    PresidentialPardonForm(PresidentialPardonForm& a);
+    PresidentialPardonForm& operator=(const PresidentialPardonForm& a);
+    virtual void actualExec() const;
 
 };
 
-std::ostream& operator<<(std::ostream& out, const PresidntialPardonForm& a);
+std::ostream& operator<<(std::ostream& out, const PresidentialPardonForm& a);
 
 #endif

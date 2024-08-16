@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 18:03:54 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/08/15 14:42:21 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/08/16 15:15:13 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,24 @@ int AForm::getExecGrade()const{
     return _execGrade;
 }
 
+void AForm::setSign(bool sign){
+    _sign = sign;
+}
+
 void AForm::beSigned(Bureaucrat b){
     if (b.getGrade() < _signGrade)
         _sign = true;
     else
         throw GradeTooLowException(b.getName(), _signGrade);
+}
+
+void    AForm::execute(Bureaucrat const& executor) const
+{
+    if (_sign == false)
+        throw ("The form is not signed yet.\n");
+    if (_execGrade < executor.getGrade())
+        throw GradeTooLowException(executor.getName(), _execGrade);
+    actualExec();
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm& a)

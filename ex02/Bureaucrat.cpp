@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:02:51 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/08/15 14:41:46 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/08/16 13:38:14 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,21 @@ void    Bureaucrat::signForm(AForm& form)
     }
     std::cout << BLUE << _name << " signed " << form.getName() << RESET << std::endl;
 }
+
+void    Bureaucrat::executeForm(AForm const& form)
+{
+    try{
+        form.execute(*this);
+    }
+    catch (std::exception& e){
+        std::cout << RED << _name << " couldn't execute " << form.getName(); 
+        std::cout << " because " << e.what() << RESET;
+        return ;
+    }
+    std::cout << BLUE << _name << " executed " << form.getName() << RESET << std::endl;
+}
+
+
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& a)
 {
