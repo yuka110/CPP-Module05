@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 18:03:54 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/09/14 12:07:14 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/09/14 12:49:13 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ AForm::AForm(std::string name, int signGrade, int execGrade) : _name(name), _sig
         throw GradeTooHighException(_name, 1);
     else if (signGrade > 150 || execGrade > 150)
         throw GradeTooLowException(_name,150);
-    std::cout << "AForm " << _name << " is constructed" << std::endl;
+    std::cout <<  _name << " is constructed" << std::endl;
 }
 
 AForm::~AForm(){
-    std::cout << "AForm " << _name << " is destructed" << std::endl;
+    std::cout << _name << " is destructed" << std::endl;
 }
 
 AForm::AForm(AForm& a) : _name(""), _signGrade(150), _execGrade(100)
@@ -91,6 +91,6 @@ std::ostream& operator<<(std::ostream& out, const AForm& a)
         out << " is signed!!" << std::endl;
     else
         out << " is not signed yet." << std::endl;
-    out << "grade required for sign is " << a.getSignGrade() << ", grade required for execution is " << a.getExecGrade() << std:: endl;
+    out << "grade required for sign is " << a.getSignGrade() << ", grade required for execution is " << a.getExecGrade() << std:: endl << std:: endl;
     return (out);
 }

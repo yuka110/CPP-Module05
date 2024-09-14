@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:02:51 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/09/14 11:51:02 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/09/14 12:44:58 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat(){
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 {
-    std::cout << "Constructor is called" << std::endl;
+    // std::cout << "Bureaucrat constructor is called" << std::endl;
     check_assignGrade(grade);
 }
 

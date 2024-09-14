@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:01:46 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/09/14 12:07:30 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/09/14 12:53:53 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,22 @@ int main()
         PresidentialPardonForm Pform("Chocolate");
         RobotomyRequestForm Rform("Strawberry");
         ShrubberyCreationForm Sform("home");
-
+        ShrubberyCreationForm Sform2("plants");
+        std::cout << std::endl;
         std::cout << Pform;
         std::cout << Rform;
         std::cout << Sform;
+        
+        std::cout << std::endl;
+        std::cout << Lara;
+        Lara.signForm(Pform);
+        Pform.execute(Lara);
+        Lara.signForm(Rform);
+        Rform.execute(Lara);
+        Lara.signForm(Sform);
+        Sform.execute(Lara);
 
+        std::cout << "--------------------------------------------" << std::endl;
         std::cout << Bob;
         Bob.signForm(Pform);
         Pform.execute(Bob);
@@ -44,18 +55,15 @@ int main()
         Sform.execute(Bob);
 
         std::cout << "--------------------------------------------" << std::endl;
-        std::cout << Lara;
-        Lara.signForm(Rform);
-        Rform.execute(Lara);
-
-        std::cout << "--------------------------------------------" << std::endl;
         std::cout << John;
         John.signForm(Pform);
         Pform.execute(John);
         John.signForm(Rform);
         Rform.execute(John);
         John.signForm(Sform);
-        Sform.execute(John);        
+        Sform2.execute(John);
+        John.signForm(Sform2);
+        Sform2.execute(John);               
         
     }
     catch (std::exception& e){

@@ -22,5 +22,5 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::actualExec() const
 {
-    std::cout << MAGENTA << getName() << " has been pardoned by Zaphod Beeblebrox!" << RESET << std::endl;
+    std::cout << MAGENTA << getName() << " has been pardoned by Zaphod Beeblebrox!" << RESET << std::endl << std::endl;
 }

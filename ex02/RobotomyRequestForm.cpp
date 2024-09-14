@@ -24,7 +24,7 @@ void RobotomyRequestForm::actualExec() const
 {
     std::cout << YELLOW << "Bzzzzzzzzzzzz .. Bzzz.. Bzzzzz!!" << std::endl;
     if (rand()% 2)
-        std::cout << getName() << "has been robotomized successfully" << RESET << std::endl;
+        std::cout << getName() << " has been robotomized successfully" << RESET << std::endl << std::endl;
     else 
-        std::cout << getName() << "has failed robotomization" << RESET << std::endl;
+        std::cout << getName() << " has failed robotomization" << RESET << std::endl << std::endl;
 }

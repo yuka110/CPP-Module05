@@ -24,7 +24,7 @@ void ShrubberyCreationForm::actualExec() const
 {
     std::ofstream file;
     std::string s = getName() + "_shrubbery";
-    file.open(s);
+    file.open(s, std::ios::trunc);
     if (!file.is_open())
         throw std::runtime_error("file couldn't be opened");
     file << ASCII_TREE;    
