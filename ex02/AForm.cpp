@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 18:03:54 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/08/16 18:16:04 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/09/14 12:07:14 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,13 @@ void AForm::beSigned(Bureaucrat b){
 
 void    AForm::execute(Bureaucrat const& executor) const
 {
-    if (_sign == false)
-        throw ("The form is not signed yet.\n");
-    if (_execGrade < executor.getGrade())
-        throw GradeTooLowException(executor.getName(), _execGrade);
     try {
-        actualExec();}
+        if (_sign == false)
+            throw NotSignedError();
+        if (_execGrade < executor.getGrade())
+            throw GradeTooLowException(executor.getName(), _execGrade);
+        actualExec();
+    }
     catch (std::exception& e){
         std::cout << RED << executor.getName() << " couldn't execute " << getName(); 
         std::cout << " because " << e.what() << RESET;

@@ -70,6 +70,13 @@ public:
                 return ("\n");
             };
     };
+
+    class NotSignedError : public std::exception{
+        public:
+            virtual const char* what() const throw(){
+                return ("The form is not signed yet. \n");
+            };
+    };
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm& a);
