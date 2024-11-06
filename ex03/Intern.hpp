@@ -26,7 +26,7 @@ public:
     class NonExistingForm : public std::exception{
         public:
             virtual const char* what() const throw(){
-                return ("The form does not exist. \n");
+                return ("The form does not exist.\n");
             };
     };
 };

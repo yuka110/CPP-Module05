@@ -6,13 +6,13 @@
 #    By: yitoh <yitoh@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/05/24 10:54:52 by yitoh         #+#    #+#                  #
-#    Updated: 2024/09/14 13:58:27 by yitoh         ########   odam.nl          #
+#    Updated: 2024/11/06 11:27:50 by yitoh         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=signForm
+NAME	=Intern
 CC		=c++
-CFLAGS	=-Wall -Werror -Wextra -std=c++11 -g -fsanitize=leak
+CFLAGS	=-Wall -Werror -Wextra -std=c++11 -g #-fsanitize=leak
 RM		=rm -f
 SRC		=Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp\
 		 RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp main.cpp

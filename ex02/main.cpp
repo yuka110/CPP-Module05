@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:01:46 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/09/14 12:53:53 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/11/06 11:02:36 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int main()
         std::cout << Bob;
         std::cout << John << std::endl;
         
-        PresidentialPardonForm Pform("Chocolate");
-        RobotomyRequestForm Rform("Strawberry");
-        ShrubberyCreationForm Sform("home");
+        PresidentialPardonForm Pform("Presidential");
+        RobotomyRequestForm Rform("Robotomy");
+        ShrubberyCreationForm Sform("Shrubbery");
         ShrubberyCreationForm Sform2("plants");
         std::cout << std::endl;
         std::cout << Pform;
@@ -61,10 +61,10 @@ int main()
         John.signForm(Rform);
         Rform.execute(John);
         John.signForm(Sform);
-        Sform2.execute(John);
+        Sform2.execute(John); // Error: Sform2 is not signed yet
         John.signForm(Sform2);
-        Sform2.execute(John);               
-        
+        Sform2.execute(John);   
+        std::cout << std::endl;            
     }
     catch (std::exception& e){
         std::cout << e.what() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:01:46 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/08/06 15:27:54 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/11/06 10:27:12 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int main()
         std::cout << "===INCREMENT===" << std::endl;
         Lara.incrementGrade();
         std::cout << Lara;
+        John.incrementGrade();
+        std::cout << John;
         std::cout << "===DECREMENT===" << std::endl;
         Lara.decrementGrade();
         std::cout << Lara;

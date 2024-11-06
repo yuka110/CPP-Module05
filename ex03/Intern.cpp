@@ -40,9 +40,9 @@ AForm* Intern::makeForm(std::string form, std::string target)
         }
     }
     catch (std::exception& e){
-        std::cout << e.what() << std::endl;
+        std::cout << RED << e.what() << RESET << std::endl;
         return (ptr);
     }
-    std::cout << "Intern creates " << form << std::endl;
+    std::cout << BLUE << "Intern creates " << form << RESET << std::endl;
     return (ptr);
 }

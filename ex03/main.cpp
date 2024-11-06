@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/24 11:01:46 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/09/14 14:16:27 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/11/06 11:22:54 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,18 @@ int main()
         std::cout << John << std::endl;
 
         Intern newbie;
-        AForm* Pform = newbie.makeForm("presidential pardon", "Chocolate");
-        AForm* Rform = newbie.makeForm("robotomy request", "Strawberry");
-        AForm* Sform = newbie.makeForm("shrubbery creation", "home");
-        // AForm* Sform2 = newbie.makeForm("SSShrubbery creation", "plants");
+        AForm* Pform = newbie.makeForm("presidential pardon", "Presidential");
+        AForm* Rform = newbie.makeForm("robotomy request", "Robotomy");
+        AForm* Sform = newbie.makeForm("shrubbery creation", "Shrubbery");
+        AForm* Dform = newbie.makeForm("dummy", "Dummy");
+
 
         std::cout << std::endl;
         std::cout << *Pform;
         std::cout << *Rform;
         std::cout << *Sform;
-        // std::cout << *Sform2;
+        if (Dform != nullptr)
+            std::cout << *Dform;
         
         std::cout << std::endl;
         std::cout << Lara;
@@ -48,7 +50,7 @@ int main()
         (*Rform).execute(Lara);
         Lara.signForm(*Sform);
         (*Sform).execute(Lara);
-
+        std::cout << std::endl;
         std::cout << "--------------------------------------------" << std::endl;
         std::cout << Bob;
         Bob.signForm(*Pform);
@@ -57,7 +59,7 @@ int main()
         (*Rform).execute(Bob);
         Bob.signForm(*Sform);
         (*Sform).execute(Bob);
-
+        std::cout << std::endl;
         std::cout << "--------------------------------------------" << std::endl;
         std::cout << John;
         John.signForm(*Pform);
@@ -66,7 +68,7 @@ int main()
         (*Rform).execute(John);
         John.signForm(*Sform);
         (*Sform).execute(John);             
-        
+        std::cout << std::endl;
         delete Pform;
         delete Rform;
         delete Sform;
